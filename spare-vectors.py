@@ -9,21 +9,31 @@ class SpareVector:
 
 s = SpareVector([1,2,0,0,0,0,1,1,1,0,0,2,3,4,0,0,0])
 s1 = SpareVector([1,2,0,0,0,0,1,0,0,0,0,2,3,4,3,3,3])
-
-def vectorSpare(v1,v2):
-    vectorProduct = []
-    if v1.keys() < v2.keys():
-        small = v1
-        big = v2
-    else:
-        small = v2
-        big = v1
-    print(small)
-    for i in small:
-        print(i)
-        if big.get(i):
-            vectorProduct.append(small[i]*big[i])
-    print(vectorProduct)
-
+class VectorOps:
+    def __init__(self,v1,v2):
+        self.small = None
+        self.big = None
+        self.updatbigandsmall(v1,v2)
+    def updatbigandsmall(self,v1,v2):
+        if len(v1) < len(v2):
+            self.small = v1
+            self.big = v2
+        else:
+            self.small = v2
+            self.big = v1
+    def vectorProduct(self):
+        vectorProduct = []
+        for i in self.small:
+            if self.big.get(i):
+                vectorProduct.append(self.small[i]*self.big[i])
+        print(vectorProduct)
+    def vectorAddtion(self):
+        vectorSum = []
+        for i in self.small:
+            if self.big.get(i):
+                vectorSum.append(self.small[i]+self.big[i])
+        print(vectorSum)
         
-vectorSpare(s.filteredData,s1.filteredData)
+vOps =VectorOps(s.filteredData,s1.filteredData)
+vOps.vectorProduct()
+vOps.vectorAddtion()
