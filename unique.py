@@ -1,4 +1,4 @@
-nums = [1,1,2,3,3,4,4]
+nums = [1,1,2,2,3,3,4,4,5]
 zor_sum = 0
 for n in nums:
     zor_sum ^=n
