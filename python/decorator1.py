@@ -10,5 +10,6 @@ def hello(name):
     print("hello",name)
 
 hello("Prabhu")
+hello("Preeti")
 
     
