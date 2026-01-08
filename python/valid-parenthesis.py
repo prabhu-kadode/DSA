@@ -1,4 +1,5 @@
 def find_valid_bracktes(str):
+    
     stack = []
     brackDict= {"}":"{",")":"(","]":"["}
 
@@ -9,5 +10,7 @@ def find_valid_bracktes(str):
             if not stack or stack[-1]!=brackDict[i]:
                 return False
             stack.pop()
+    result = f"the string{str} is valid" if len(stack)==0 else f"the string is {str} is invalid"
+    print(result)
     return len(stack)==0
-print(find_valid_bracktes("(()"))
+print(find_valid_bracktes("(())"))
